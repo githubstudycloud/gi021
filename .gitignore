@@ -1,0 +1,276 @@
+# ========================================
+# 以 . 开头的目录全部忽略
+# ========================================
+.*/
+
+# ========================================
+# 操作系统生成文件
+# ========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+
+# ========================================
+# 编辑器 / IDE
+# ========================================
+# VSCode (仅保留 .vscode/extensions.json 等共享配置)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# JetBrains IDEs (IntelliJ / PyCharm / WebStorm 等)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+Session.vim
+.netrwhist
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========================================
+# 语言 / 框架
+# ========================================
+
+# Node.js / npm / yarn / pnpm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.npm/
+.yarn/
+.pnp.*
+.cache/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+*.egg-info/
+.eggs/
+dist/
+*.egg
+MANIFEST
+venv/
+env/
+.venv/
+.env/
+ENV/
+.virtualenv/
+Pipfile.lock
+poetry.lock
+
+# Java / Maven / Gradle
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+target/
+.mvn/
+*.gradle
+.gradle/
+build/
+out/
+bin/
+
+# Kotlin
+*.kotlin_module
+kotlin-js-store/
+
+# Go
+vendor/
+*.exe
+*.exe~
+*.test
+*.out
+go.sum
+
+# Rust
+target/
+Cargo.lock
+*.rs.bk
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+# PHP / Composer
+vendor/
+composer.lock
+.env.local
+.env.*.local
+
+# C / C++
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.obj
+*.elf
+*.pdb
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# .NET / C#
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+[Pp]ackages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.pubxml
+*.pubxml.user
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.freezed.dart
+*.g.dart
+
+# ========================================
+# 构建产物 & 临时文件
+# ========================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.pid
+*.seed
+*.pid.lock
+coverage/
+dist/
+build/
+out/
+tmp/
+temp/
+
+# ========================================
+# 环境 & 配置敏感文件
+# ========================================
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+secrets.*
+credentials.*
+
+# ========================================
+# 数据库文件
+# ========================================
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.s3db
+*.sl3
+
+# ========================================
+# 压缩 & 归档
+# ========================================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# ========================================
+# 其他
+# ========================================
+*.DS_Store
+Thumbs.db
