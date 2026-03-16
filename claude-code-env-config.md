@@ -203,7 +203,7 @@ claude
 
 | 设置项 | 类型 | 默认值 | 说明 |
 |--------|------|--------|------|
-| `claudeCode.environmentVariables` | `object` | `{}` | **注入环境变量给 Claude 进程** |
+| `claudeCode.environmentVariables` | `array` | `[]` | **注入环境变量给 Claude 进程**，每项为 `{name, value}` 对象 |
 | `claudeCode.selectedModel` | `string` | `default` | 新会话使用的模型 |
 | `claudeCode.useTerminal` | `boolean` | `false` | 使用终端模式而非图形面板 |
 | `claudeCode.initialPermissionMode` | `string` | `default` | 权限模式：`default`/`plan`/`acceptEdits`/`bypassPermissions` |
@@ -218,16 +218,20 @@ claude
 
 ### 3.3 VS Code settings.json 配置示例
 
+> ⚠️ **格式说明**：`claudeCode.environmentVariables` 是**数组**，每项为 `{"name": "变量名", "value": "值"}` 对象，
+> 源码中逐项读取 `z.name` / `z.value` 注入进程环境。**不是** `{"KEY": "VALUE"}` 的对象格式。
+
 ```json
 // .vscode/settings.json 或 用户 settings.json
 {
-  "claudeCode.environmentVariables": {
-    "ANTHROPIC_BASE_URL": "https://your-proxy.com/v1",
-    "ANTHROPIC_API_KEY": "sk-xxx",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5-20251001",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6"
-  },
+  "claudeCode.environmentVariables": [
+    { "name": "ANTHROPIC_BASE_URL",             "value": "https://your-proxy.com/v1" },
+    { "name": "ANTHROPIC_API_KEY",              "value": "sk-xxx" },
+    { "name": "ANTHROPIC_DEFAULT_SONNET_MODEL", "value": "claude-sonnet-4-6" },
+    { "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",  "value": "claude-haiku-4-5-20251001" },
+    { "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",   "value": "claude-opus-4-6" },
+    { "name": "DISABLE_PROMPT_CACHING",         "value": "1" }
+  ],
   "claudeCode.disableLoginPrompt": true,
   "claudeCode.selectedModel": "claude-sonnet-4-6",
   "claudeCode.preferredLocation": "panel",
@@ -434,12 +438,13 @@ ANTHROPIC_AUTH_TOKEN="sk-xxx"
 ```json
 {
   "claudeCode.disableLoginPrompt": true,
-  "claudeCode.environmentVariables": {
-    "ANTHROPIC_BASE_URL": "https://your-proxy.com/v1",
-    "ANTHROPIC_API_KEY": "sk-your-key",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5-20251001"
-  }
+  "claudeCode.environmentVariables": [
+    { "name": "ANTHROPIC_BASE_URL",             "value": "https://your-proxy.com/v1" },
+    { "name": "ANTHROPIC_API_KEY",              "value": "sk-your-key" },
+    { "name": "ANTHROPIC_DEFAULT_SONNET_MODEL", "value": "claude-sonnet-4-6" },
+    { "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",  "value": "claude-haiku-4-5-20251001" },
+    { "name": "DISABLE_PROMPT_CACHING",         "value": "1" }
+  ]
 }
 ```
 
